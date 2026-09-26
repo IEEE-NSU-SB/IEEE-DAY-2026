@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  /* Editorial contrast, the way Vogue or Esquire set type: a huge
+     decorative serif for headlines and pull‑quotes (font-display /
+     font-serif), a small, clean, highly legible grotesk for everything
+     you actually have to read (font-sans, the body default). */
+  --font-sans: "Inter", system-ui, "Segoe UI", sans-serif;
+  --font-display: "Libre Caslon Display", Georgia, "Times New Roman", serif;
+  --font-serif: "Libre Caslon Text", Georgia, "Times New Roman", serif;
+
+  /* IEEE blue scale, built from official IEEE Blue (#00629B). This is
+     now the page's one accent color against a warm paper background —
+     used the way an editorial site uses a single bold ink color. */
+  --color-ieee-950: #050f1a;
+  --color-ieee-900: #071b2e;
+  --color-ieee-800: #0a2740;
+  --color-ieee-700: #0d3554;
+  --color-ieee-600: #0d4d78;
+  --color-ieee-500: #00629b;
+  --color-ieee-400: #2f8fc4;
+  --color-ieee-300: #6bb3da;
+  --color-ieee-200: #a8d2e9;
+  --color-ieee-100: #d8ecf6;
+
+  /* The page background: warm off-white "paper", not pure white. */
+  --color-paper: #eeeeec;
+
+  --color-gold-500: #e8a020;
+  --color-gold-400: #f3b73e;
+  --color-gold-700: #8a5a10;
+}
+
+html {
+  /* Lenis drives scroll smoothing in JS; native smooth-scroll would fight it. */
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-paper);
+  color: var(--color-ieee-950);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Editorial drop cap — the first letter of a lead paragraph, set in
+   the display serif, the way a magazine feature opens. */
+.drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.2em;
+  line-height: 0.78;
+  float: left;
+  padding-right: 0.09em;
+  padding-top: 0.03em;
+  color: var(--color-ieee-500);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ieee-700);
+  outline-offset: 2px;
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+/* Ambient drift for the background color field — big, loose swings so
+   the motion actually reads, not a barely-there wobble. */
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(8%, 12%) scale(1.08);
+  }
+  50% {
+    transform: translate(18%, 3%) scale(1.16);
+  }
+  75% {
+    transform: translate(5%, -10%) scale(1.05);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-11%, -8%) scale(1.1);
+  }
+  50% {
+    transform: translate(-20%, 9%) scale(0.92);
+  }
+  75% {
+    transform: translate(-6%, 14%) scale(1.06);
+  }
+}
+
+/* Gas-like shape shifting — an asymmetric border-radius that keeps
+   reshaping, so each blob reads as a drifting cloud, not a static disc. */
+@keyframes morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  }
+  33% {
+    border-radius: 62% 38% 30% 70% / 55% 65% 35% 45%;
+  }
+  66% {
+    border-radius: 35% 65% 55% 45% / 38% 35% 65% 62%;
+  }
+}
+
+/* Slow pan across an oversized gradient — the backdrop's base wash,
+   always quietly shifting on its own. */
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 30%;
+  }
+  50% {
+    background-position: 100% 70%;
+  }
+}
+
+@keyframes gradient-pan-reverse {
+  0%,
+  100% {
+    background-position: 100% 70%;
+  }
+  50% {
+    background-position: 0% 30%;
+  }
+}
+
+/* Fog blob drift variants — three offset paths so blobs never
+   move in unison, giving the field its living, gaseous quality. */
+@keyframes fog-drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(8%, 12%) scale(1.08);
+  }
+  50% {
+    transform: translate(18%, 3%) scale(1.16);
+  }
+  75% {
+    transform: translate(5%, -10%) scale(1.05);
+  }
+}
+
+@keyframes fog-drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-11%, -8%) scale(1.1);
+  }
+  50% {
+    transform: translate(-20%, 9%) scale(0.92);
+  }
+  75% {
+    transform: translate(-6%, 14%) scale(1.06);
+  }
+}
+
+@keyframes fog-drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(12%, -6%) scale(1.04);
+  }
+  45% {
+    transform: translate(-8%, 14%) scale(1.12);
+  }
+  70% {
+    transform: translate(16%, 8%) scale(0.96);
+  }
+}
+
+/* Shape-shifting for fog blobs — same effect as morph but name-spaced
+   so blobs can run it independently of any other morph usage. */
+@keyframes fog-morph {
+  0%,
+  100% {
+    border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
+  }
+  33% {
+    border-radius: 62% 38% 30% 70% / 55% 65% 35% 45%;
+  }
+  66% {
+    border-radius: 35% 65% 55% 45% / 38% 35% 65% 62%;
+  }
+}
+
+/* Slow horizontal mist slides — large soft blobs that drift across
+   the mid-ground, reinforcing depth without drawing the eye. */
+@keyframes mist-slide {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateX(12%) translateY(-4%);
+    opacity: 0.26;
+  }
+}
+
+@keyframes mist-slide-reverse {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translateX(-12%) translateY(4%);
+    opacity: 0.26;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-play-state: paused !important;
+  }
+}
