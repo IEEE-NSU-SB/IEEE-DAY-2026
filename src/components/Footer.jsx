@@ -1,15 +1,14 @@
-import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon, XIcon } from "./SocialIcons";
 
 const issueLinks = [
-  { label: "Home", to: "/" },
-  { label: "Activities", to: "/activities" },
-  { label: "Events", to: "/events" },
-  { label: "Timeline", to: "/timeline" },
-  { label: "Contest", to: "/contest" },
-  { label: "Achievement", to: "/achievement" },
-  { label: "About", to: "/about" },
+  { label: "Home", to: "#home" },
+  { label: "Activities", to: "#activities" },
+  { label: "Events", to: "#events" },
+  { label: "Timeline", to: "#timeline" },
+  { label: "Contest", to: "#contest" },
+  { label: "Achievement", to: "#achievement" },
+  { label: "About", to: "#about" },
 ];
 
 const affiliations = [
@@ -55,12 +54,12 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {issueLinks.map((l) => (
                 <li key={l.label}>
-                  <Link
-                    to={l.to}
+                  <a
+                    href={l.to}
                     className="text-sm text-ieee-900/70 transition-colors hover:text-ieee-950"
                   >
                     {l.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

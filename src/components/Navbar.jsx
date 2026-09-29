@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ExternalLink, Menu, X } from "lucide-react";
+import INSB from "../assets/insb.gif";
 
 const links = [
-  { label: "Home", to: "/" },
-  { label: "Activities", to: "/activities" },
-  { label: "Events", to: "/events" },
-  { label: "Contest", to: "/contest" },
-  { label: "Timeline", to: "/timeline" },
-  { label: "Achievement", to: "/achievement" },
-  { label: "About", to: "/about" },
+  { label: "Home", to: "#home" },
+  { label: "Timeline", to: "#timeline" },
+  { label: "Ambassadors", to: "#ambassadors" },
+  { label: "Contest", to: "#contest" },
+  { label: "Achievement", to: "#achievement" },
+  { label: "About", to: "#about" },
 ];
 
 // Apple's "Liquid Glass": barely-there tint, heavy blur + saturation so
@@ -44,15 +44,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors duration-200 ${
-      isActive ? "text-ieee-950" : "text-ieee-900/55 hover:text-ieee-950"
-    }`;
+  const navigateToSection = (event, href) => {
+    event.preventDefault();
+    setOpen(false);
 
-  const mobileLinkClass = ({ isActive }) =>
-    `rounded-2xl px-3 py-2 text-left text-sm font-medium transition-colors duration-200 ${
-      isActive ? "bg-ieee-500 text-white" : "text-ieee-900"
-    }`;
+    const section = document.querySelector(href);
+    if (!section) return;
+
+    window.history.replaceState(null, "", href);
+    if (window.__lenis) {
+      window.__lenis.scrollTo(section, { offset: -88 });
+    } else {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <header className="sticky top-3 z-50 px-3 sm:px-5">
@@ -68,17 +73,14 @@ export default function Navbar() {
             <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${SHEEN}`} />
             <div className="relative flex items-center justify-between gap-4 px-4 py-2 sm:px-5">
               <Link to="/" className="flex shrink-0 items-center gap-2.5">
-                <div className="flex h-9 w-9 rotate-45 items-center justify-center rounded-lg bg-ieee-500 shadow-inner">
-                  <span className="-rotate-45 text-[10px] font-black text-white">
-                    IEEE
-                  </span>
-                </div>
+                <img
+                  src={INSB}
+                  alt="IEEE NSU SB Logo"
+                  className="h-8 w-8 border border-ieee-950/10 bg-white/60 shadow-sm backdrop-blur-sm"
+                />
                 <div className="hidden text-left leading-tight sm:block">
                   <p className="text-sm font-bold text-ieee-950">
-                    IEEE NSU SB
-                  </p>
-                  <p className="text-[10px] font-semibold uppercase leading-tight tracking-wider text-ieee-700/80">
-                    Student Branch Presents
+                    IEEE NSU Student Branch
                   </p>
                 </div>
               </Link>
@@ -88,24 +90,24 @@ export default function Navbar() {
                 className="hidden items-center gap-6 lg:flex"
               >
                 {links.map((link) => (
-                  <NavLink
+                  <a
                     key={link.label}
-                    to={link.to}
-                    end={link.to === "/"}
-                    className={linkClass}
+                    href={link.to}
+                    onClick={(event) => navigateToSection(event, link.to)}
+                    className="text-sm font-medium text-ieee-900/55 transition-colors duration-200 hover:text-ieee-950"
                   >
                     {link.label}
-                  </NavLink>
+                  </a>
                 ))}
               </nav>
 
               <a
-                href="https://ieeeday.org"
+                href="https://ieeensusb.org"
                 target="_blank"
                 rel="noreferrer"
-                className="hidden shrink-0 items-center gap-1.5 rounded-full bg-ieee-950 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-ieee-800 lg:inline-flex"
+                className="hidden shrink-0 items-center gap-1.5 rounded-full bg-[#002855] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-ieee-800 lg:inline-flex"
               >
-                ieeeday.org
+                ieeensusb.org
                 <ExternalLink size={14} />
               </a>
 
@@ -147,15 +149,14 @@ export default function Navbar() {
               <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${SHEEN}`} />
               <div className="relative flex flex-col gap-1 py-4">
                 {links.map((link) => (
-                  <NavLink
+                  <a
                     key={link.label}
-                    to={link.to}
-                    end={link.to === "/"}
-                    onClick={() => setOpen(false)}
-                    className={mobileLinkClass}
+                    href={link.to}
+                    onClick={(event) => navigateToSection(event, link.to)}
+                    className="rounded-2xl px-3 py-2 text-left text-sm font-medium text-ieee-900 transition-colors duration-200 hover:bg-ieee-500/10"
                   >
                     {link.label}
-                  </NavLink>
+                  </a>
                 ))}
                 <a
                   href="https://ieeeday.org"

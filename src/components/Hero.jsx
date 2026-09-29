@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import DateRange from "./DateRange";
+import INSB from "../assets/insb.png";
+import IAS from "../assets/IAS.png";
+import RAS from "../assets/RAS.png";
+import WIE from "../assets/WIE.png";
+import PES from "../assets/PES.png";
 
 const PARTNERS = [
-  { name: "IEEE IAS",  abbr: "IAS",  color: "#00629B" },
-  { name: "IEEE RAS",  abbr: "RAS",  color: "#0d4d78" },
-  { name: "IEEE WIE",  abbr: "WIE",  color: "#7a3b8f" },
-  { name: "NSU PES",   abbr: "PES",  color: "#2d7a2d" },
+  { name: "IEEE IAS", logo: IAS },
+  { name: "IEEE RAS", logo: RAS },
+  { name: "IEEE WIE", logo: WIE },
+  { name: "NSU PES", logo: PES },
 ];
 
 export default function Hero() {
@@ -18,6 +22,7 @@ export default function Hero() {
 
   return (
     <section
+      id="home"
       aria-label="IEEE Day 2026 introduction"
       className="relative overflow-hidden pt-28 pb-24 text-center"
     >
@@ -28,13 +33,6 @@ export default function Hero() {
 
             {/* Left: kicker + headline */}
             <div>
-              <p
-                className={`text-xs font-semibold uppercase tracking-[0.3em] text-ieee-800 transition-all duration-700 ${
-                  mounted ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-                }`}
-              >
-                IEEE NSU Student Branch Presents
-              </p>
 
               <h1 className="mt-3 font-display text-[clamp(3rem,11vw,8.5rem)] font-normal leading-[0.9] tracking-tight text-ieee-500">
                 <span className="inline-block overflow-hidden pb-1 align-bottom">
@@ -78,22 +76,10 @@ export default function Hero() {
               }`}
               style={{ transitionDelay: "200ms" }}
             >
-              <div className="relative flex h-[clamp(5rem,11vw,9rem)] w-[clamp(5rem,11vw,9rem)] items-center justify-center overflow-hidden rounded-[22%] border-2 border-ieee-500/25 bg-white/60 shadow-lg shadow-ieee-500/10 backdrop-blur-sm">
-                <svg aria-hidden="true" className="absolute inset-0 h-full w-full opacity-[0.06]" viewBox="0 0 80 80">
-                  <defs>
-                    <pattern id="logo-grid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                      <path d="M10 0L5 5L10 10L5 5L0 10L5 5L0 0L5 5Z" fill="none" stroke="#00629B" strokeWidth="0.6" />
-                    </pattern>
-                  </defs>
-                  <rect width="80" height="80" fill="url(#logo-grid)" />
-                </svg>
-                <div className="relative flex flex-col items-center gap-1.5">
-                  <div className="h-[clamp(1.6rem,3.5vw,3rem)] w-[clamp(1.6rem,3.5vw,3rem)] rounded-full border-2 border-dashed border-ieee-500/35" />
-                  <span className="text-[clamp(0.45rem,0.9vw,0.6rem)] font-bold uppercase tracking-widest text-ieee-500/45">
-                    logo
-                  </span>
+              <div className="relative flex h-55 w-55 items-center justify-center overflow-hidden">
+                <div>
+                  <img src={INSB} alt="IEEE NSU Student Branch logo" className="h-full w-full object-contain p-2" />
                 </div>
-                <div className="absolute inset-x-0 top-0 h-[3px] bg-ieee-500/45" />
               </div>
             </div>
 
@@ -117,15 +103,15 @@ export default function Hero() {
           We have some big events and contests — stay with us.
         </p>
 
-        <Link
-          to="/events"
+        <a
+          href="#events"
           className={`mt-8 inline-block rounded-full bg-ieee-950 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-ieee-950/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ieee-800 active:translate-y-0 ${
             mounted ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
           }`}
-          style={{ transitionDelay: mounted ? "540ms" : "0ms" }}
+          style={{ transitionDelay: mounted ? "140ms" : "0ms" }}
         >
           Our Events
-        </Link>
+        </a>
 
         <div
           className={`transition-all duration-700 ${
@@ -136,7 +122,7 @@ export default function Hero() {
           <DateRange />
         </div>
 
-        {/* Partner logo placeholders */}
+        {/* Partner logos */}
         <div
           className={`mt-16 transition-all duration-700 ${
             mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
@@ -144,40 +130,22 @@ export default function Hero() {
           style={{ transitionDelay: "720ms" }}
         >
           <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-ieee-900/40">
-            In association with
+            In collaboration with
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            {PARTNERS.map((p) => (
+          <div className="mx-auto mt-6 grid max-w-3xl grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-4 sm:gap-12">
+            {PARTNERS.map((partner) => (
               <div
-                key={p.name}
-                className="flex flex-col items-center gap-2 group"
-                title={p.name}
+                key={partner.name}
+                className="flex h-20 items-center justify-center sm:h-24"
+                title={partner.name}
               >
-                {/* logo placeholder box */}
-                <div
-                  className="relative flex h-16 w-24 items-center justify-center overflow-hidden rounded-xl border border-white/60 bg-white/50 shadow-sm backdrop-blur-sm transition-all duration-300 group-hover:shadow-md group-hover:scale-105 sm:h-20 sm:w-28"
-                >
-                  {/* coloured top bar — brand accent */}
-                  <div
-                    className="absolute inset-x-0 top-0 h-[3px]"
-                    style={{ backgroundColor: p.color }}
-                  />
-                  {/* abbr text as stand-in for the real logo */}
-                  <span
-                    className="select-none text-base font-bold tracking-wide sm:text-lg"
-                    style={{ color: p.color }}
-                  >
-                    {p.abbr}
-                  </span>
-                  {/* subtle "add logo" hint */}
-                  <span className="absolute bottom-1.5 text-[8px] font-semibold uppercase tracking-wider text-ieee-900/25">
-                    logo
-                  </span>
-                </div>
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-ieee-900/45">
-                  {p.name}
-                </span>
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

@@ -33,12 +33,11 @@ const ambassadors = [
 
 export default function Activities() {
   return (
-    <section className="px-8 py-16 sm:px-10">
-      <div className="mx-auto max-w-5xl">
+    <section id="ambassadors" className="px-8 py-16 sm:px-10">
+      <div className="mx-auto max-w-4xl">
         <EditorialHeader
           icon={Users}
           label="The Contributors"
-          folio="Page 01 — Activities"
           title="Meet the Ambassadors"
           subtitle="The students carrying IEEE Day 2026 from campus to campus — outreach, operations, and every volunteer hour between."
         />

@@ -1,71 +1,76 @@
 import { Sparkles } from "lucide-react";
 import EditorialHeader from "../components/EditorialHeader";
 import Reveal from "../components/Reveal";
+import Demo from "../assets/Demo.png";
 
-const milestones = [
+const events = [
   {
-    date: "SEPT 25, 2026",
-    title: "Ambassador Briefing & Media Rollout",
-    desc: "Official reveal of IEEE Day ambassadors, launch of social campaigns, video teaser broadcast, and promotional booth deployment across NSU campus grounds.",
-  },
-  {
-    date: "OCT 01, 2026",
-    title: "Contest Registrations & Submission Closes",
-    desc: "Final intake portal closes for the Global IEEE Photo Contest, 60-Second Reel Challenge, and Technical Paper presentations ahead of international judging.",
-  },
-  {
-    date: "OCT 03-05, 2026",
-    title: "IAS Mega Week & Pre-Events",
-    desc: "Multi-track specialized technical workshops, hands-on industrial automation challenges, WIE mentorship panels, and RoboQuest line maze preliminaries.",
-  },
-  {
-    date: "OCT 06 • IEEE DAY",
-    title: "IEEE Day 2026 Grand Festivities, Workshops & Award Gala",
-    desc: "Grand university-wide celebrations at North South University: keynote addresses by IEEE Bangladesh Section luminaries, project expo, robot arenas, celebratory cake cutting ceremony, and gala awards presentation.",
-    badge: "Main University Gala",
-    highlight: true,
-  },
-  {
-    date: "OCT 08, 2026",
-    title: "Global Results & Accolades Announcement",
-    desc: "IEEE Global Headquarters announces worldwide contest winners, certificate distributions, and international photo challenge recognitions.",
+    id: "smash-n-shuttle-3",
+    branch: "Branch / PES",
+    title: "Smash N Shuttle 3.0",
+    date: "October 12–16",
+    venue: "NSU Indoor Sports",
+    audience: "INSB members",
+    description:
+      "An intra-INSB badminton tournament bringing the branch community together for five days of friendly competition.",
+    image: Demo,
+    imageAlt: "Smash N Shuttle 3.0 intra INSB badminton tournament poster",
+    registrationLink: "gvubh",
   },
 ];
 
 export default function TimelinePage() {
   return (
-    <section className="px-8 py-16 sm:px-10">
-      <div className="mx-auto max-w-3xl">
+    <section id="timeline" className="px-8 py-16 sm:px-10">
+      <div className="mx-auto max-w-4xl">
         <EditorialHeader
           icon={Sparkles}
-          label="Official Roadmap"
-          folio="Page 03 — Timeline"
+          label="Timeline"
           title="Key Milestones"
-          subtitle="From the first ambassador briefing to the grand university gala and the global winner broadcast."
         />
 
-        <div className="flex flex-col gap-4">
-          {milestones.map((m, i) => (
+        <div className="space-y-6">
+          {events.map((event, index) => (
             <Reveal
-              key={m.date}
-              delay={i * 60}
-              className="grid grid-cols-1 gap-2 rounded-2xl border border-ieee-950/10 bg-white/65 px-6 py-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:shadow-md sm:grid-cols-[140px_1fr] sm:gap-8 sm:px-8 sm:py-7"
+              key={event.id}
+              delay={index * 80}
+              className="overflow-hidden rounded-2xl border border-ieee-950/10 bg-white/70 shadow-sm backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] text-align-top"
             >
-              <p className="text-xs font-bold uppercase tracking-wider text-ieee-900/60">
-                {m.date}
-              </p>
-              <div>
-                {m.badge && (
-                  <span className="mb-2 inline-block rounded-full bg-gold-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
-                    {m.badge}
-                  </span>
+              <div className="bg-ieee-950/5">
+                <img
+                  src={event.image}
+                  alt={event.imageAlt}
+                  className="h-full max-h-[420px] w-full rounded-lg object-contain"
+                />
+              </div>
+
+              <div className="flex flex-col justify-center my-2 mx-5">
+                <h2 className="mt-4 font-display text-3xl text-ieee-950 sm:text-4xl">
+                  {event.title}
+                </h2>
+
+                <dl className="grid gap-x-6 gap-y-2 py-2 ">
+                  <div>
+                    <dd className="mt-1 text-sm font-semibold text-ieee-950">
+                      {event.date} | {event.venue} | {event.audience}
+                    </dd>
+                  </div>
+                </dl>
+
+                <p className=" text-sm leading-relaxed text-ieee-900/65">
+                  {event.description}
+                </p>
+
+                {event.registrationLink && (
+                  <a
+                    href={event.registrationLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 inline-flex w-fit items-center rounded-full bg-ieee-950 px-5 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-ieee-800"
+                  >
+                    Register Now
+                  </a>
                 )}
-                <p className="font-display text-xl text-ieee-950">
-                  {m.title}
-                </p>
-                <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-ieee-900/60">
-                  {m.desc}
-                </p>
               </div>
             </Reveal>
           ))}

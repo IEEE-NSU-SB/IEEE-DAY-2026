@@ -15,17 +15,15 @@ const channels = [
 export default function About() {
   return (
     <>
-      <section className="px-8 py-16 sm:px-10">
-        <div className="mx-auto max-w-6xl">
+      <section id="about" className="px-8 py-16 sm:px-10">
+        <div className="mx-auto max-w-4xl">
           <EditorialHeader
             icon={Info}
             label="About the Branch"
-            folio="Page 06 — About"
             title="North South University"
-            subtitle="Official Branch Headquarters — Room SAC 412, Plot 15, Bashundhara R/A, Dhaka 1229, Bangladesh."
           />
 
-          <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
+          <div className="grid gap-10">
             <Reveal>
               <p className="font-serif italic text-lg leading-relaxed text-ieee-950 drop-cap">
                 IEEE NSU Student Branch is the North South University chapter
@@ -41,44 +39,13 @@ export default function About() {
                 the university's engineers to the wider IEEE community.
               </p>
             </Reveal>
-
-            <Reveal delay={100} className="rounded-2xl border border-ieee-950/10 bg-white/70 p-6 shadow-sm backdrop-blur-sm">
-              <p className="text-xs font-bold uppercase tracking-widest text-ieee-900/40">
-                Reach the Branch
-              </p>
-              <ul className="mt-4 space-y-3">
-                <li className="flex gap-2.5 text-sm text-ieee-900">
-                  <MapPin size={16} className="mt-0.5 shrink-0 text-ieee-500" aria-hidden="true" />
-                  Room SAC 412, North South University, Plot 15, Bashundhara
-                  R/A, Dhaka 1229, Bangladesh
-                </li>
-                <li>
-                  <a
-                    href="tel:+880255668200"
-                    className="flex items-center gap-2.5 text-sm text-ieee-900 transition-colors hover:text-ieee-950"
-                  >
-                    <Phone size={16} className="shrink-0 text-ieee-500" aria-hidden="true" />
-                    +880 2-55668200 Ext: 1311
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:ieee@northsouth.edu"
-                    className="flex items-center gap-2.5 text-sm text-ieee-900 transition-colors hover:text-ieee-950"
-                  >
-                    <Mail size={16} className="shrink-0 text-ieee-500" aria-hidden="true" />
-                    ieee@northsouth.edu
-                  </a>
-                </li>
-              </ul>
-            </Reveal>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-ieee-950/10 px-8 py-16 sm:px-10">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-8 text-xs font-bold uppercase tracking-[0.25em] text-ieee-500">
+      <section className=" px-8 py-8 sm:px-10">
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-8 text-xl font-bold font-serif uppercase tracking-[0.25em] text-ieee-500">
             Stay Connected
           </p>
           <ul className="grid gap-4 sm:grid-cols-3 lg:grid-cols-6">

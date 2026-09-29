@@ -51,13 +51,12 @@ const smallAchievements = [
 
 export default function AchievementPage() {
   return (
-    <section className="px-8 py-16 sm:px-10">
-      <div className="mx-auto max-w-6xl">
+    <section id="achievement" className="px-8 py-16 sm:px-10">
+      <div className="mx-auto max-w-4xl">
         <EditorialHeader
           icon={Trophy}
           label="Hall of Fame · Global Honors"
-          folio="Page 05 — Achievement"
-          title="Branch Achievements"
+          title="IEEE DAY Achievements"
           subtitle="Historic recognitions for North South University's Student Branch, on national, regional, and worldwide stages."
           color="gold"
         />
@@ -109,7 +108,7 @@ export default function AchievementPage() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {smallAchievements.map((a, i) => {
             const Icon = a.icon;
             return (
@@ -135,7 +134,7 @@ export default function AchievementPage() {
               </Reveal>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -43,12 +43,11 @@ const contests = [
 
 export default function ContestPage() {
   return (
-    <section className="px-8 py-16 sm:px-10">
-      <div className="mx-auto max-w-3xl">
+    <section id="contest" className="px-8 py-16 sm:px-10">
+      <div className="mx-auto max-w-4xl">
         <EditorialHeader
           icon={Zap}
           label="Global Challenges"
-          folio="Page 04 — Contest"
           title="Contests & Challenges"
           subtitle="Official global challenges from the IEEE Day committee — international cash grants, plaques, and recognition."
         />
@@ -60,7 +59,7 @@ export default function ContestPage() {
               <Reveal
                 key={c.title}
                 delay={i * 90}
-                className="grid grid-cols-1 gap-6 rounded-2xl border border-ieee-950/10 bg-white/65 px-6 py-7 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:shadow-md sm:grid-cols-[1fr_auto] sm:items-center sm:px-8"
+                className="gap-6 rounded-2xl border border-ieee-950/10 bg-white/65 px-6 py-7 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:shadow-md sm:grid-cols-[1fr_auto] sm:items-center sm:px-8"
               >
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-ieee-950/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-ieee-800">
@@ -89,13 +88,13 @@ export default function ContestPage() {
                   </ul>
                 </div>
 
-                <button
+                {/* <button
                   type="button"
                   className="flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-ieee-950 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-ieee-800 active:scale-[0.98]"
                 >
                   {c.cta}
                   <ArrowUpRight size={15} aria-hidden="true" />
-                </button>
+                </button> */}
               </Reveal>
             );
           })}

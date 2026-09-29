@@ -47,7 +47,7 @@ const events = [
 
 export default function EventsPage() {
   return (
-    <section className="px-8 py-16 sm:px-10">
+    <section id="events" className="px-8 py-16 sm:px-10">
       <div className="mx-auto max-w-6xl">
         <EditorialHeader
           icon={Calendar}
