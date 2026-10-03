@@ -17,7 +17,6 @@ const contests = [
       "Social – Capture IEEE members coming together through social activities or gatherings.",
       "Raise Your Flag – Showcase the IEEE Section or country flag with creativity and pride.",
     ],
-    entryPeriod: "6–20 October 2026",
     votingPeriod: "23–31 October 2026",
   },
   {
@@ -32,7 +31,6 @@ const contests = [
       "Long Video – 60 to 90 seconds.",
       "Short Video – 10 to 30 seconds.",
     ],
-    entryPeriod: "6–20 October 2026",
     votingPeriod: "23–31 October 2026",
   },
 ];
