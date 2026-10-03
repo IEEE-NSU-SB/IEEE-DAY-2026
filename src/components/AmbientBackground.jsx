@@ -60,7 +60,8 @@ export default function AmbientBackground() {
           className="
             absolute
             inset-0
-            bg-[length:250%_250%]
+            bg-[length:100%_100%]
+            sm:bg-[length:250%_250%]
             bg-gradient-to-br
             from-[#d9edf7]
             via-[#f2ebe6]
@@ -72,7 +73,8 @@ export default function AmbientBackground() {
           className="
             absolute
             inset-0
-            bg-[length:220%_220%]
+            bg-[length:100%_100%]
+            sm:bg-[length:220%_220%]
             bg-gradient-to-tr
             from-[#c6e3f3]/60
             via-transparent
@@ -85,6 +87,8 @@ export default function AmbientBackground() {
         className="
           absolute
           inset-0
+          hidden
+          sm:block
         "
       >
         {BLOBS.filter((blob) => blob.depth !== 2).map((blob, index) => (
@@ -99,6 +103,8 @@ export default function AmbientBackground() {
         className="
           absolute
           inset-0
+          hidden
+          sm:block
         "
       >
         {BLOBS.filter((blob) => blob.depth === 2).map((blob, index) => (
@@ -112,6 +118,8 @@ export default function AmbientBackground() {
       <div
         className="
           absolute
+          hidden
+          sm:block
           left-[-15%]
           top-[18%]
           h-[34rem]
@@ -125,6 +133,8 @@ export default function AmbientBackground() {
       <div
         className="
           absolute
+          hidden
+          sm:block
           bottom-[5%]
           right-[-10%]
           h-[30rem]
