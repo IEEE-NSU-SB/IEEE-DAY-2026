@@ -3,14 +3,14 @@ import { FacebookIcon, InstagramIcon, XIcon } from "../components/SocialIcons";
 import EditorialHeader from "../components/EditorialHeader";
 import Reveal from "../components/Reveal";
 
-const channels = [
-  { icon: FacebookIcon, label: "Facebook", value: "fb.com/ieeensusb" },
-  { icon: InstagramIcon, label: "Instagram", value: "@ieee_nsu_sb" },
-  { icon: XIcon, label: "X", value: "@ieee_nsu" },
-  { icon: Globe, label: "Branch Portal", value: "ieeensu.org" },
-  { icon: Mail, label: "Email Contact", value: "contact@ieeensu.org" },
-  { icon: Link2, label: "IEEE Day Official", value: "ieeeday.org" },
-];
+// const channels = [
+//   { icon: FacebookIcon, label: "Facebook", value: "fb.com/ieeensusb" },
+//   { icon: InstagramIcon, label: "Instagram", value: "@ieee_nsu_sb" },
+//   { icon: XIcon, label: "X", value: "@ieee_nsu" },
+//   { icon: Globe, label: "Branch Portal", value: "ieeensu.org" },
+//   { icon: Mail, label: "Email Contact", value: "contact@ieeensu.org" },
+//   { icon: Link2, label: "IEEE Day Official", value: "ieeeday.org" },
+// ];
 
 export default function About() {
   return (
@@ -20,7 +20,7 @@ export default function About() {
           <EditorialHeader
             icon={Info}
             label="About the Branch"
-            title="North South University"
+            title="IEEE North South Student Branch"
           />
 
           <div className="grid gap-10">
@@ -43,7 +43,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className=" px-8 py-8 sm:px-10">
+      {/* <section className=" px-8 py-8 sm:px-10">
         <div className="mx-auto max-w-4xl">
           <p className="mb-8 text-xl font-bold font-serif uppercase tracking-[0.25em] text-ieee-500">
             Stay Connected
@@ -72,7 +72,7 @@ export default function About() {
             })}
           </ul>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

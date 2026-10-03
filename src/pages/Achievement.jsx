@@ -9,6 +9,7 @@ import {
 import EditorialHeader from "../components/EditorialHeader";
 import Reveal from "../components/Reveal";
 import ScrollRevealText from "../components/ScrollRevealText";
+import ieeeDayImage from "../assets/ieee-day.jpg";
 
 const smallAchievements = [
   {
@@ -68,42 +69,37 @@ export default function AchievementPage() {
               1st Place Worldwide · Official Winner
             </span>
             <h3 className="mt-4 font-display text-2xl font-normal leading-tight text-ieee-950 sm:text-3xl">
-              IEEE Global Photo Contest: 1st Place Worldwide & Region 10
-              Winner
+              IEEE DAY 2025 Photo Contest Winner - Raise Your Flag Category
             </h3>
             <ScrollRevealText
               className="mt-4 text-sm leading-relaxed text-ieee-900/70"
-              text="IEEE NSU Student Branch was honored as the 1st Place Winner Worldwide among thousands of participating university branches across all IEEE regions. This monumental accolade celebrates the unyielding dedication, student synergy, humanitarian technology initiatives, and engineering storytelling at North South University."
+              text="Capturing pride, spirit and unity- IEEE NSU SB shines bright!
+
+              IEEE NSU SB has won the IEEE Day Photo Contest 2025 in the “Raise Your Flag” category.
+
+              This achievement reflects our team’s dedication, spirit and commitment to representing our community with pride. Moments like these remind us of the power of unity, passion, and purpose. A big thank you to everyone who supported us and cheered us on; your encouragement made this possible."
             />
             <div className="mt-6 flex flex-wrap gap-3">
-              <div className="rounded-xl border border-ieee-950/10 bg-white/65 px-4 py-3 backdrop-blur-sm">
+              {/* <div className="rounded-xl border border-ieee-950/10 bg-white/65 px-4 py-3 backdrop-blur-sm">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-ieee-900/50">
-                  Region 10 Rank
+                  Winning Prize
                 </p>
                 <p className="mt-1 text-sm font-bold text-ieee-950">
-                  #1 in Asia-Pacific
+                  $500 Grant
                 </p>
-              </div>
-              <div className="rounded-xl border border-ieee-950/10 bg-white/65 px-4 py-3 backdrop-blur-sm">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-ieee-900/50">
-                  Global Recognition
-                </p>
-                <p className="mt-1 text-sm font-bold text-ieee-950">
-                  $750 Activity Grant
-                </p>
-              </div>
+              </div> */}
             </div>
           </div>
 
           <div
             aria-hidden="true"
-            className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-ieee-500"
+            className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.18),transparent_55%)]" />
-            <Trophy
-              size={96}
-              className="text-white/90 transition-transform duration-500 group-hover:scale-110 motion-safe:animate-[soft-pulse_3.5s_ease-in-out_infinite]"
-              strokeWidth={1.25}
+            <img
+              src={ieeeDayImage}
+              alt="Achievement"
+              className="w-full sm:h-60 h-fit object-cover"
             />
           </div>
         </Reveal>

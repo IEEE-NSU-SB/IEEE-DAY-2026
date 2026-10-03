@@ -3,29 +3,32 @@ import { FacebookIcon } from "../components/SocialIcons";
 import InitialsAvatar from "../components/InitialsAvatar";
 import EditorialHeader from "../components/EditorialHeader";
 import Reveal from "../components/Reveal";
+import AreebahImage from "../assets/ambassadors/areebah.jpg";
+import HafizurImage from "../assets/ambassadors/hafizur.jpg";
+import ShohorabImage from "../assets/ambassadors/shohorab.jpg";
 
 const ambassadors = [
   {
     name: "Areebah Hasnat",
-    role: "Outreach Lead",
-    desc: "Our campus ambassador who works with passion and drives student outreach.",
-    facebook: "https://www.facebook.com/ieeensusb",
+    img: AreebahImage,
+    role: "Sub-Executive, Promotions Team",
+    facebook: "https://www.facebook.com/areebah.hasnat",
     email: "mailto:ieee.nsu.sb@gmail.com",
     profile: "https://ieeensusb.org/member-profile/100068264/",
   },
   {
     name: "Md. Hafizur Rahman",
-    role: "Operations Lead",
-    desc: "Our campus ambassador who works with passion and coordinates flagship operations.",
-    facebook: "https://www.facebook.com/ieeensusb",
+    img: HafizurImage,
+    role: "Sub-Executive, Logistics & Operations Team",
+    facebook: "https://www.facebook.com/profile.php?id=61581268033749",
     email: "mailto:ieee.nsu.sb@gmail.com",
     profile: "https://ieeensusb.org/member-profile/100637811/",
   },
   {
     name: "Shohorab Mehedi",
-    role: "Volunteer Lead",
-    desc: "Our campus ambassador who works with passion and leads volunteer execution hubs.",
-    facebook: "https://www.facebook.com/ieeensusb",
+    img: ShohorabImage,
+    role: "Incharge, Logistics & Operations Team",
+    facebook: "https://www.facebook.com/shohorabmehedi",
     email: "mailto:ieee.nsu.sb@gmail.com",
     profile: "https://ieeensusb.org/member-profile/101243293/",
   },
@@ -49,16 +52,13 @@ export default function Activities() {
               delay={index * 100}
               className="group"
             >
-              {/* Ambassador Number */}
+              {/* Ambassador Number
               <p className="font-display text-5xl text-ieee-500/25">
                 {String(index + 1).padStart(2, "0")}
-              </p>
+              </p> */}
 
               {/* Avatar */}
-              <InitialsAvatar
-                name={ambassador.name}
-                className="-mt-8 h-32 w-32 rounded-full shadow-lg ring-4 ring-paper transition-transform duration-500 group-hover:scale-105"
-              />
+              <img src={ambassador.img} alt={ambassador.name} />
 
               {/* Name */}
               <p className="mt-5 font-display text-2xl text-ieee-950">
@@ -103,7 +103,7 @@ export default function Activities() {
                 </a>
 
                 {/* Email */}
-                <a
+                {/* <a
                   href={ambassador.email}
                   aria-label={`Email ${ambassador.name}`}
                   title="Email"
@@ -123,7 +123,7 @@ export default function Activities() {
                   "
                 >
                   <Mail size={15} strokeWidth={2} />
-                </a>
+                </a> */}
 
                 {/* IEEE NSU SB Member Profile */}
                 <a

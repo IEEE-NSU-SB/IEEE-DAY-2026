@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DateRange from "./DateRange";
-import INSB from "../assets/insb.png";
+import IEEEDAY from "../assets/IEEE-DAY.png";
 import IAS from "../assets/IAS.png";
 import RAS from "../assets/RAS.png";
 import WIE from "../assets/WIE.png";
@@ -78,7 +78,7 @@ export default function Hero() {
             >
               <div className="relative flex h-55 w-55 items-center justify-center overflow-hidden">
                 <div>
-                  <img src={INSB} alt="IEEE NSU Student Branch logo" className="h-full w-full object-contain p-2" />
+                  <img src={IEEEDAY} alt="IEEE DAY 2026 logo" className="h-full w-full object-contain p-2" />
                 </div>
               </div>
             </div>

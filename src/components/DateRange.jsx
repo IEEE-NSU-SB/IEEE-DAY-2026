@@ -4,11 +4,12 @@
 
 // day 0 = Sept 25, day 13 = Oct 08 → x = day/13 * 620
 const MARKS = [
-  { x: 0,   date: "SEPT 25",   label: "Season Opens",  kind: "end"  },
-  { x: 239, date: "OCT 01",    label: "Entries Close", kind: "mid"  },
-  { x: 382, date: "OCT 03–05", label: "IAS Mega Week", kind: "mid"  },
-  { x: 525, date: "OCT 06",    label: "IEEE Day",       kind: "hero" },
-  { x: 620, date: "OCT 08",    label: "Season Ends",   kind: "end"  },
+  { x: 0,   date: "OCT 04",   label: "Recruitment Fall26",  kind: "end"  },
+  { x: 203, date: "OCT 06",    label: "IEEE Day Celebration", kind: "mid"  },
+  { x: 345, date: "OCT 08", label: "Membership Perks 5.0", kind: "mid"  },
+  { x: 462, date: "OCT 08,10,11", label: "Smash' N Shuttle 3.0", kind: "mid"  },
+  { x: 620, date: "OCT 15",    label: "IEEE Day Closing",       kind: "hero" },
+  { x: 620, date: "OCT 15",    label: "IEEE Day Closing",   kind: "end"  },
 ];
 
 export default function DateRange() {
@@ -126,13 +127,13 @@ export default function DateRange() {
           OCT 06
         </span>
         <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-gold-600/70">
-          IEEE Day — The Main Event
+          IEEE Day — Celebration
         </span>
       </div>
 
       {/* ── Footer line ─────────────────────────────────────────────── */}
       <p className="mt-5 text-center text-[9px] font-semibold uppercase tracking-[0.3em] text-ieee-900/30">
-        Fourteen Days · IEEE Day Season 2026
+        Thirteen Days · IEEE Day 2026
       </p>
     </div>
   );

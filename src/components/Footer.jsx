@@ -3,29 +3,28 @@ import { FacebookIcon, InstagramIcon, XIcon } from "./SocialIcons";
 
 const issueLinks = [
   { label: "Home", to: "#home" },
-  { label: "Activities", to: "#activities" },
-  { label: "Events", to: "#events" },
   { label: "Timeline", to: "#timeline" },
+  { label: "Ambassadors", to: "#ambassadors" },
   { label: "Contest", to: "#contest" },
   { label: "Achievement", to: "#achievement" },
   { label: "About", to: "#about" },
 ];
 
-const affiliations = [
-  { label: "IEEE Day Official Portal", href: "https://ieeeday.org" },
-  { label: "IEEE NSU SB Official Site", href: "#" },
-  { label: "IEEE Region 10", href: "#" },
-  { label: "IEEE Bangladesh Section", href: "#" },
-  { label: "North South University", href: "#" },
-];
+// const affiliations = [
+//   { label: "IEEE Day Official Portal", href: "https://ieeeday.org" },
+//   { label: "IEEE NSU SB Official Site", href: "#" },
+//   { label: "IEEE Region 10", href: "#" },
+//   { label: "IEEE Bangladesh Section", href: "#" },
+//   { label: "North South University", href: "https://www.northsouth.edu/" },
+// ];
 
 const socials = [
-  { Icon: FacebookIcon, label: "Facebook", href: "#" },
-  { Icon: InstagramIcon, label: "Instagram", href: "#" },
-  { Icon: XIcon, label: "X (Twitter)", href: "#" },
+  { Icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/ieeensusb" },
+  { Icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/ieeensusb" },
+  { Icon: XIcon, label: "X (Twitter)", href: "https://twitter.com/ieeensusb" },
 ];
 
-const legal = ["Privacy", "Terms", "IEEE Code of Ethics"];
+// const legal = ["Privacy", "Terms", "IEEE Code of Ethics"];
 
 export default function Footer() {
   return (
@@ -33,9 +32,6 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 pb-10 pt-16">
         {/* masthead */}
         <div className="border-b border-ieee-950/10 pb-10">
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-ieee-500">
-            The Masthead
-          </p>
           <p className="mt-2 font-display text-3xl text-ieee-950 sm:text-4xl">
             IEEE NSU Student Branch.
           </p>
@@ -46,10 +42,10 @@ export default function Footer() {
         </div>
 
         {/* columns */}
-        <div className="grid gap-10 border-b border-ieee-950/10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid gap-10 border-b border-ieee-950/10 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-ieee-900/40">
-              In This Issue
+              Quick Links
             </p>
             <ul className="mt-4 space-y-2.5">
               {issueLinks.map((l) => (
@@ -65,7 +61,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <p className="text-xs font-bold uppercase tracking-widest text-ieee-900/40">
               Affiliations
             </p>
@@ -83,7 +79,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-ieee-900/40">
@@ -92,7 +88,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex gap-2.5 text-sm text-ieee-900/70">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-ieee-500" aria-hidden="true" />
-                Room SAC 412, North South University, Dhaka 1229
+                Plot-15, Block-B, Bashundhara, Dhaka – 1229, Bangladesh
               </li>
               <li>
                 <a
@@ -100,16 +96,16 @@ export default function Footer() {
                   className="flex items-center gap-2.5 text-sm text-ieee-900/70 transition-colors hover:text-ieee-950"
                 >
                   <Phone size={16} className="shrink-0 text-ieee-500" aria-hidden="true" />
-                  +880 2-55668200
+                  01858252224 | 01637920211
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:ieee@northsouth.edu"
+                  href="mailto:sb-nsu@ieee.org"
                   className="flex items-center gap-2.5 text-sm text-ieee-900/70 transition-colors hover:text-ieee-950"
                 >
                   <Mail size={16} className="shrink-0 text-ieee-500" aria-hidden="true" />
-                  ieee@northsouth.edu
+                  sb-nsu@ieee.org
                 </a>
               </li>
             </ul>
@@ -139,18 +135,18 @@ export default function Footer() {
         </div>
 
         {/* colophon */}
-        <div className="flex flex-col items-center justify-between gap-3 pt-8 text-xs text-ieee-900/50 sm:flex-row">
+        <div className="flex flex-col items-center justify-center gap-3 pt-8 text-xs text-ieee-900/50 sm:flex-row">
           <p>
             © 2026 IEEE NSU Student Branch (INSB). Celebrating IEEE Day ·
             Advancing Technology for Humanity.
           </p>
-          <div className="flex gap-5">
+          {/* <div className="flex gap-5">
             {legal.map((l) => (
               <a key={l} href="#" className="transition-colors hover:text-ieee-950">
                 {l}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

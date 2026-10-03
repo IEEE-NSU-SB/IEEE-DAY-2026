@@ -1,43 +1,39 @@
-import { ArrowUpRight, Camera, FileText, Video, Zap } from "lucide-react";
+import { Camera, Video, Zap } from "lucide-react";
 import EditorialHeader from "../components/EditorialHeader";
 import Reveal from "../components/Reveal";
 
+const THEME = "Leveraging Technology for a Better Tomorrow";
+
 const contests = [
   {
-    badge: "Photo Track",
+    badge: "Photo Contest",
     icon: Camera,
-    title: "Global IEEE Day Photo Contest",
-    prize: "$500, $250 & Plaques · IEEE Global Certificate",
-    rules: [
-      "Open to IEEE NSU student members and registered affiliates.",
-      "Original photography submitted before October 01, 2026.",
-      "Include official hashtags: #IEEEDay2026 and #IEEENSUSB.",
+    title: "IEEE Day 2026 Photo Contest",
+    description: `Show how technology, innovation, community, and IEEE are helping create a better tomorrow under the theme "${THEME}".`,
+    prize: "1st: US$500 per category · 2nd: US$250 per category · Judges' Choice: US$250",
+    groupLabel: "Categories",
+    items: [
+      "Technovation – Showcase STEM, research, innovation, or technology in action.",
+      "Social – Capture IEEE members coming together through social activities or gatherings.",
+      "Raise Your Flag – Showcase the IEEE Section or country flag with creativity and pride.",
     ],
-    cta: "Submit Photo Entry",
+    entryPeriod: "6–20 October 2026",
+    votingPeriod: "23–31 October 2026",
   },
   {
-    badge: "Video & Reel Track",
+    badge: "Video Contest",
     icon: Video,
-    title: "60-Second Video / Reel Challenge",
-    prize: "$400 + Global Feature on IEEE Social Channels",
-    rules: [
-      "Vertical 9:16 aspect ratio video strictly under 60 seconds.",
-      "Highlights student collaboration, robotics, or STEM innovation.",
-      "Direct submission via IEEE Day official contest portal.",
+    title: "IEEE Day 2026 Video Contest",
+    description: `Create an original video that brings the IEEE Day theme to life: "${THEME}".`,
+    prize:
+      "Long Video: 1st US$850, 2nd US$450 · Short Video: 1st US$850, 2nd US$450 · Judges' Choice: US$250",
+    groupLabel: "Formats",
+    items: [
+      "Long Video – 60 to 90 seconds.",
+      "Short Video – 10 to 30 seconds.",
     ],
-    cta: "Submit Reel Challenge",
-  },
-  {
-    badge: "Research & Papers",
-    icon: FileText,
-    title: "Technical Paper & Ambassador Challenge",
-    prize: "Travel Grants & IEEE Xplore Recognition",
-    rules: [
-      "Standard IEEE two-column formatted manuscripts (4 to 6 pages).",
-      "Blind peer review by IEEE Fellows and senior industry practitioners.",
-      "Includes ambassador advocacy and presentation defense on October 06.",
-    ],
-    cta: "View Track Guidelines",
+    entryPeriod: "6–20 October 2026",
+    votingPeriod: "23–31 October 2026",
   },
 ];
 
@@ -49,7 +45,7 @@ export default function ContestPage() {
           icon={Zap}
           label="Global Challenges"
           title="Contests & Challenges"
-          subtitle="Official global challenges from the IEEE Day committee — international cash grants, plaques, and recognition."
+          subtitle={`Official IEEE Day 2026 contests under the theme "${THEME}".`}
         />
 
         <div className="flex flex-col gap-4">
@@ -59,7 +55,7 @@ export default function ContestPage() {
               <Reveal
                 key={c.title}
                 delay={i * 90}
-                className="gap-6 rounded-2xl border border-ieee-950/10 bg-white/65 px-6 py-7 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:shadow-md sm:grid-cols-[1fr_auto] sm:items-center sm:px-8"
+                className="gap-6 rounded-2xl border border-ieee-950/10 bg-white/65 px-6 py-7 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:shadow-md sm:px-8"
               >
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-ieee-950/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-ieee-800">
@@ -69,11 +65,18 @@ export default function ContestPage() {
                   <h3 className="mt-3 font-display text-2xl text-ieee-950">
                     {c.title}
                   </h3>
-                  <p className="mt-1 text-sm font-semibold text-ieee-600">
+                  <p className="mt-2 text-sm leading-relaxed text-ieee-900/70">
+                    {c.description}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-ieee-600">
                     {c.prize}
                   </p>
-                  <ul className="mt-3 space-y-1.5">
-                    {c.rules.map((r) => (
+
+                  <p className="mt-4 text-xs font-bold uppercase tracking-wider text-ieee-800">
+                    {c.groupLabel}
+                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {c.items.map((r) => (
                       <li
                         key={r}
                         className="flex gap-2 text-xs leading-relaxed text-ieee-900/55"
@@ -86,15 +89,18 @@ export default function ContestPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                {/* <button
-                  type="button"
-                  className="flex shrink-0 items-center justify-center gap-1.5 rounded-full bg-ieee-950 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-ieee-800 active:scale-[0.98]"
-                >
-                  {c.cta}
-                  <ArrowUpRight size={15} aria-hidden="true" />
-                </button> */}
+                  <dl className="mt-4 grid gap-3 border-t border-ieee-950/10 pt-4 text-xs sm:grid-cols-2">
+                    <div>
+                      <dt className="font-bold text-ieee-800">Entry period</dt>
+                      <dd className="mt-0.5 text-ieee-900/70">{c.entryPeriod}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-bold text-ieee-800">Voting period</dt>
+                      <dd className="mt-0.5 text-ieee-900/70">{c.votingPeriod}</dd>
+                    </div>
+                  </dl>
+                </div>
               </Reveal>
             );
           })}
@@ -103,4 +109,3 @@ export default function ContestPage() {
     </section>
   );
 }
-
