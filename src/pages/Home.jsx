@@ -67,7 +67,7 @@ export default function Home() {
       <Ambassadors />
       <Contest />
       <Achievement />
-      <About />
+      {/* <About /> */}
     </>
   );
 }
