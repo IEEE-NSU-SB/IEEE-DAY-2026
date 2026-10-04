@@ -89,10 +89,10 @@ export default function ContestPage() {
                   </ul>
 
                   <dl className="mt-4 grid gap-3 border-t border-ieee-950/10 pt-4 text-xs sm:grid-cols-2">
-                    <div>
+                    {/* <div>
                       <dt className="font-bold text-ieee-800">Entry period</dt>
                       <dd className="mt-0.5 text-ieee-900/70">{c.entryPeriod}</dd>
-                    </div>
+                    </div> */}
                     <div>
                       <dt className="font-bold text-ieee-800">Voting period</dt>
                       <dd className="mt-0.5 text-ieee-900/70">{c.votingPeriod}</dd>
