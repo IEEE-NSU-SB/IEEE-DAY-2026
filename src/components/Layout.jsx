@@ -17,7 +17,7 @@ export default function Layout() {
         <main>
           <Outlet />
         </main>
-        <Closer />
+        {/* <Closer /> */}
         <Footer />
         <BackToTop />
       </div>
