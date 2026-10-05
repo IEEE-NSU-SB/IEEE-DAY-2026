@@ -6,6 +6,10 @@ import IEEEDayPoster from "../assets/IEEE-Day.png";
 import MainPoster from "../assets/IEEE DAY 26 Poster.png";
 import Recruitment from "../assets/Recruitment.png";
 import Celebration from "../assets/IEEE Day Celebration.png";
+import Treasure from "../assets/Treasure.png";
+import Tech from "../assets/Tech.png";
+import Membership from "../assets/Membership.png";
+
 const events = [
   {
     id: "membership-drive",
@@ -25,10 +29,10 @@ const events = [
     branch: "INSB",
     title: "IEEE Day 2026 Celebration",
     date: "October 6 (6 PM - 8 PM)",
-    venue: "TBA",
+    venue: "AUDI801",
     audience: "INSB members",
     description:
-      "The official IEEE Day 2026 celebration, kicking off the week's events.",
+      "The official IEEE Day 2026 celebration, kicking off the week's events by cutting our IEEE DAY cake and talking all about the upcoming IEEE DAY events.",
     image: Celebration,
     imageAlt: "IEEE Day Celebration poster",
     registrationLink: "",
@@ -55,7 +59,7 @@ const events = [
     audience: "IEEE NSU Student Branch members",
     description:
       "Learn about the benefits, resources and opportunities that come with an IEEE membership.",
-    image: IEEEDayPoster,
+    image: Membership,
     imageAlt: "Membership Perks poster",
     registrationLink: "",
   },
@@ -81,7 +85,7 @@ const events = [
     audience: "Team Volunteers",
     description:
       "A team-based treasure hunt with clues and challenges across campus.",
-    image: IEEEDayPoster,
+    image: Treasure,
     imageAlt: "Treasure Hunt poster",
     registrationLink: "",
   },
@@ -103,10 +107,10 @@ const events = [
     branch: "INSB",
     title: "Tech Talk",
     date: "October 10 (6 PM - 8 PM)",
-    venue: "TBA",
+    venue: "OAT601",
     audience: "Branch Officers and Team Volunteers",
     description: "A technical talk with all teams.",
-    image: IEEEDayPoster,
+    image: Tech,
     imageAlt: "Tech Talk poster",
     registrationLink: "",
   },
@@ -239,7 +243,7 @@ export default function TimelinePage() {
               </div>
 
               <div className="flex flex-col justify-center my-2 mx-5">
-                <h2 className="mt-4 font-display text-3xl text-ieee-950 sm:text-4xl">
+                <h2 className="mt-4 font-serif text-3xl text-ieee-950 sm:text-4xl">
                   {event.title}
                 </h2>
 

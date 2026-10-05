@@ -7,7 +7,7 @@ const issueLinks = [
   { label: "Ambassadors", to: "#ambassadors" },
   { label: "Contest", to: "#contest" },
   { label: "Achievement", to: "#achievement" },
-  { label: "About", to: "#about" },
+  // { label: "About", to: "#about" },
 ];
 
 // const affiliations = [

@@ -9,7 +9,7 @@ const links = [
   { label: "Ambassadors", to: "#ambassadors" },
   { label: "Contest", to: "#contest" },
   { label: "Achievement", to: "#achievement" },
-  { label: "About", to: "#about" },
+  // { label: "About", to: "#about" },
 ];
 
 // Apple's "Liquid Glass": barely-there tint, heavy blur + saturation so

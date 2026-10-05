@@ -104,7 +104,7 @@ export default function Hero() {
         </p>
 
         <a
-          href="#events"
+          href="#timeline"
           className={`mt-8 inline-block rounded-full bg-ieee-950 px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-ieee-950/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-ieee-800 active:translate-y-0 ${
             mounted ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
           }`}

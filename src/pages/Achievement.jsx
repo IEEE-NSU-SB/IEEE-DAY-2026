@@ -91,15 +91,11 @@ export default function AchievementPage() {
             </div>
           </div>
 
-          <div
-            aria-hidden="true"
-            className="group relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.18),transparent_55%)]" />
+          <div className="overflow-hidden rounded-xl border border-ieee-950/10 bg-white/65 shadow-sm backdrop-blur-sm">
             <img
               src={ieeeDayImage}
               alt="Achievement"
-              className="w-full sm:h-60 h-fit object-cover"
+              className="w-full sm:h-60 sm:object-cover object-contain"
             />
           </div>
         </Reveal>
